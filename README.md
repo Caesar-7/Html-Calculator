@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fa37de1ebc99403a85cb2de171530ff5)](https://app.codacy.com/manual/Caesar-7/Html-Calculator?utm_source=github.com&utm_medium=referral&utm_content=Caesar-7/Html-Calculator&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d08770f30a8c427998aea96787af3f13)](https://www.codacy.com/manual/Caesar-7/Html-Calculator/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Caesar-7/Html-Calculator&amp;utm_campaign=Badge_Grade)
 
 # Html calculator
 A simple graphic html calculator, created without using eval() function.

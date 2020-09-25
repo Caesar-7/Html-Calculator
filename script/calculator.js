@@ -5,7 +5,7 @@ let div = 1;
 function display() {
     let screen = "";
 
-    for (element of arguments) {
+    for (let element of arguments) {
         screen = `${screen}${element} `;
     }
 
@@ -57,7 +57,7 @@ function float() {
         if (op == null) {
             display(n1 + ".");
         } else {
-            display(n1, op, n2 + ".")
+            display(n1, op, n2 + ".");
         }
     }
 }
