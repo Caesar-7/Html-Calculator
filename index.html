@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Graphic calculator</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/calculator.css">
+		<script src="script/calculator.js"></script>
+	</head>
+
+	<body>
+		<input type="text" value="0" readonly id="out" /><br>
+		<button onclick="set(7)">7</button>
+		<button onclick="set(8)">8</button>
+		<button onclick="set(9)">9</button>
+		<button onclick="setop('**')">^</button>
+		<button onclick="ans()">Ans</button>
+		<button onclick="ce()">CE</button><br>
+		<button onclick="set(4)">4</button>
+		<button onclick="set(5)">5</button>
+		<button onclick="set(6)">6</button>
+		<button onclick="setop('*')">x</button>
+		<button onclick="setop('/')">/</button><br>
+		<button onclick="set(1)">1</button>
+		<button onclick="set(2)">2</button>
+		<button onclick="set(3)">3</button>
+		<button onclick="setop('+')">+</button>
+		<button onclick="setop('-')">-</button><br>
+		<button onclick="set(0)">0</button>
+		<button onclick="float()">.</button>
+		<button onclick="calculate()">=</button>
+	</body>
+</html>
+
