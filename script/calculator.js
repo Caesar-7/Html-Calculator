@@ -1,19 +1,32 @@
-let n1, op, n2, res, point, isAns;
-n1 = op = n2 = res = point = isAns = null;
+let n1, op, n2, res, point, isFixed;
+n1 = op = n2 = res = point = isFixed = null;
 let div = 1;
 
 function display() {
     let screen = "";
 
     for (let element of arguments) {
-        screen = `${screen}${element} `;
+        switch (element) {
+            case Math.PI:
+                screen = `${screen}π `;
+                break;
+            case Math.E:
+                screen = `${screen}e `;
+                break;
+            case res:
+                screen = `${screen}Ans `;
+                break;
+            default:
+                screen = `${screen}${element} `;
+                break;
+        }
     }
 
     document.getElementById("out").value = screen;
 }
 
 function set(num) {
-    if (!isAns) {
+    if (!isFixed) {
         if (op == null) {
             if (point) {
                 div /= 10;
@@ -36,12 +49,20 @@ function set(num) {
     }
 }
 
+function setFixed(num) {
+    if (num && !isFixed && !point) {
+        set(num);
+
+        isFixed = true;
+    }
+}
+
 function setop(operator) {
     if (n1 != null) {
         op = operator;
 
         point = false;
-        isAns = false;
+        isFixed = false;
         div = 1;
         n2 = null;
 
@@ -50,7 +71,7 @@ function setop(operator) {
 }
 
 function float() {
-    if (!point && !isAns) {
+    if (!point && !isFixed) {
         point = true;
         div = 1;
 
@@ -62,56 +83,43 @@ function float() {
     }
 }
 
-function ans() {
-    if (res && !isAns && !point) {
-        set(res);
-
-        isAns = true;
-    }
-}
-
 function ce() {
     n1 = null;
     op = null;
     n2 = null;
     div = 1;
     point = false;
+    isFixed = false;
 
     document.getElementById("out").value = 0;
 }
 
 function calculate() {
-    switch(op) {
+    switch (op) {
         case "+":
             res = n1 + n2;
             ce();
             document.getElementById("out").value = res;
-
-            return;
+            break;
         case "-":
             res = n1 - n2;
             ce();
             document.getElementById("out").value = res;
-
-            return;
+            break;
         case "*":
             res = n1 * n2;
             ce();
             document.getElementById("out").value = res;
-
-            return;
+            break;
         case "/":
             res = n1 / n2;
             ce();
             document.getElementById("out").value = res;
-
-            return;
-        case "**":
+            break;
+        case "^":
             res = n1 ** n2;
             ce();
             document.getElementById("out").value = res;
-
-            return;
+            break;
     }
 }
-
